@@ -19,6 +19,9 @@
 ## Info
 
 This is my first (almost) complete rice of arch linux using DWM. The main goal was to create a working machine as resource efficient as my needs allowed. This build doesn't have any widget and visual fluff, (except picom). In idle mode ram consumtion is slightly below 400MB.
+<p align="center">
+  <img width="250px" src="https://imgur.com/gallery/CsCDXeA" />
+</p>
 
 ### Some notes:
 
