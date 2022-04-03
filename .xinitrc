@@ -65,7 +65,7 @@ clipmenud &
 picom &
 
 # Wallpaper
-nitrogen --set-zoom-fill --random /usr/share/backgrounds
+nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds
 
 #Set keymaps
 setxkbmap -layout "us,ru" -option "grp:toggle" &

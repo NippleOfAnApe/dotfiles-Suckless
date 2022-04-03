@@ -91,7 +91,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export EDITOR='nano'
 export TERMINAL='st'
 
-export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui'
+export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
 export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/"
 export NNN_FIFO=/tmp/nnn.fifo
 
@@ -144,7 +144,7 @@ n ()
 #
 # Aliases
 # alias zshconfig="mate ~/.zshrc"
-alias w='nitrogen --set-zoom-fill --random /usr/share/backgrounds'
+alias w='nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds'
 alias s='startx'
 alias todo='bat /W/Stuff/todo.md'
 alias q='/home/george/.local/quotes.sh'
