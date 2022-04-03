@@ -18,49 +18,49 @@
 
 ## ❗ Info
 
-This is my first (almost) complete rice of arch linux using DWM. The main goal was to create a working machine as resource efficient as my needs allowed. This build doesn't have any widget and visual fluff, (except picom). In idle mode ram consumtion is slightly below 400MB.
+This is my first (almost) complete rice of arch linux using DWM. The main goal was to create a working machine as resource efficient as my needs allowed. This build doesn't have any widgets and visual fluff, (except picom). In idle mode ram consumtion is slightly below 400MB.
 
 <img src="https://i.imgur.com/uY820t5.png" />
 
 ### 📒 Some notes:
 
 + There are many different themes that don't really fit together. DWM has a "Sea foam". For GTK I use [Sweet Dark](https://www.pling.com/p/1253385) theme, but terminal applications use [Dracula](https://github.com/dracula/dracula-theme), and in VSCodium this doesn't look as stylish as [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme). 
-+ My machine has both Windows and Linux so I dual boot and have [this](https://github.com/semimqmo/sekiro_grub_theme) cool looking config with a different theme.txt
-+ Apart from nerd awesome that is found in select few places, there is also a [JoyPixels](https://archlinux.org/packages/community/any/ttf-joypixels/) font needed for displaying emojis, and any Japanese font that can view kanji. Basic font is Fira Code (with ligatures)
++ My machine has both Windows and Linux so I dual boot and have [this](https://github.com/semimqmo/sekiro_grub_theme) cool looking grub theme with a different theme.txt
++ Apart from `ttf-font-awesome` that is found in select few places, there is also a [JoyPixels](https://archlinux.org/packages/community/any/ttf-joypixels/) font needed for displaying emojis, and any Japanese font that can view kanji. Terminal and VSCode font is Fira Code (with ligatures)
 
 <a id="suckless"></a>
 
 ## 🟦 Suckless
-Fisrst association that comes to mind after hearing "simple and minimalistic software" is Suckless. If you are willing to spend a lot of time manually adding pathces to the programms, you will end up building a product that will feel as yours, carefully crafted and only limited by your imagination (for the most parts). There is a;so no configuration files, which mean every time you edit a config.h, you **need to recompile a program**.
+First association that comes to mind after hearing "simple and minimalistic software" is Suckless. If you are willing to spend a lot of time manually adding pathces to programms, you will end up building a product that will feel as yours only, carefully crafted and functionally limited only by your imagination (for the most part). There is no configuration files, which means every time you edit a config.h, you **need to recompile**.
 
 ### [DWM](https://dwm.suckless.org/) patches:
  - **attachbottom** - new window is spawned as a slave and movs to the bottom;
- - **fullgaps** - adds gaps between windows;
+ - **fullgaps** - add gaps between windows;
  - **cfacts** - resize slave windows;
  - **monoclesymbol** - changed to use my icon with addition to the number of currently oppened windows;
  - **movestack** - move windows;
- - **noborder** removes a border when only one window is visible;
- - **pertag** - window layout is stored for each tag;
+ - **noborder** remove a border when only one window is visible;
+ - **pertag** - window layout is set for each tag;
  - **resizecorners** - resize a window in floating mode from any corner;
 
 ### [ST](https://st.suckless.org/) patches:
 - **bold is not bright** - bold text is rendered properly;
-- **clipboard** - sets clipboard on global selection;
+- **clipboard** - set clipboard on global selection;
 - **scrollback** - ability to scroll up;
-- **boxdraw** - renders lines and block characters without the gap between them;
-- **font2** - adds more than 1 font;
+- **boxdraw** - render lines and block characters without the gap between them;
+- **font2** - add more than 1 font;
 
 ### [Slstatus](https://tools.suckless.org/slstatus/)
 
-A custom status bar. There are many alternatives, like dwmblocks that allow sending signals to each entry and thus updating them only when needed, but slstatus is easier to configure lol. It relies on `xkblayout-state` to get a keymap, and `pamixer` to display a volume, and `light` for screen brightness.
+A custom status bar. There are many alternatives, like dwmblocks that allow sending signals to each member and thus updating them only when needed, but slstatus is easier to configure lol. It relies on `xkblayout-state` to get a keymap, `pamixer` to display a volume, and `light` for screen brightness.
 
 ### [Dmenu](https://tools.suckless.org/dmenu/)
 
-One of the best launchers out there. It's functionality is superb. DMenu can be used more then just an application launcher. A clipboard manager such as [Clipmenu](https://github.com/cdown/clipmenu) can be implemented for a quick access. You can also create a custom shell script to display an emoji wheel, search the web, mount disks, manage music player and much much more!
+One of the best launchers out there. Its functionality is superb. Dmenu can be used more then just an application launcher. A clipboard manager such as [Clipmenu](https://github.com/cdown/clipmenu) can be implemented for a quick access. You can also create a custom shell script to display an emoji wheel, search the web, mount disks, manage music player and much much more!
 
 ### [Slock](https://tools.suckless.org/slock/)
 
-Stupidly simple screen lock utility. It can be set up using Xautolock, one of sucklesses utilities, or directly tied to systemd sleep and suspend signals. A new systemd unit will need to be created.
+Stupidly simple screen lock utility. It can be automatically activated by using Xautolock, one of sucklesses utilities, or directly be tied to systemd sleep and suspend signals. A new systemd unit will have to be created.
 
 <a id="deps"></a>
 
