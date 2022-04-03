@@ -4,7 +4,7 @@
 <img src="https://i.imgur.com/uFCs93Z.png">
 <img src="https://i.imgur.com/HINtic6.png">
 
--NOTE: wallpapers use sepparate directory, and they can be changed randomly
+*NOTE: wallpapers use sepparate directory, and they can be changed randomly*
 <img src="https://i.imgur.com/B1pcWLD.png">
 
 ## Table of Contents
