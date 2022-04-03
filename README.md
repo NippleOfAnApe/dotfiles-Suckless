@@ -16,13 +16,13 @@
 
 <a id="about"></a>
 
-## ❗ Info ❗
+## ❗ Info
 
 This is my first (almost) complete rice of arch linux using DWM. The main goal was to create a working machine as resource efficient as my needs allowed. This build doesn't have any widget and visual fluff, (except picom). In idle mode ram consumtion is slightly below 400MB.
 
 <img src="https://i.imgur.com/uY820t5.png" />
 
-### 📒 Some notes 📒:
+### 📒 Some notes:
 
 + There are many different themes that don't really fit together. DWM has a "Sea foam". For GTK I use [Sweet Dark](https://www.pling.com/p/1253385) theme, but terminal applications use [Dracula](https://github.com/dracula/dracula-theme), and in VSCodium this doesn't look as stylish as [One Dark Pro](https://marketplace.visualstudio.com/items?itemName=zhuangtongfa.Material-theme). 
 + My machine has both Windows and Linux so I dual boot and have [this](https://github.com/semimqmo/sekiro_grub_theme) cool looking config with a different theme.txt
@@ -30,7 +30,7 @@ This is my first (almost) complete rice of arch linux using DWM. The main goal w
 
 <a id="suckless"></a>
 
-## 🟦 Suckless 🟦
+## 🟦 Suckless
 Fisrst association that comes to mind after hearing "simple and minimalistic software" is Suckless. If you are willing to spend a lot of time manually adding pathces to the programms, you will end up building a product that will feel as yours, carefully crafted and only limited by your imagination (for the most parts). There is a;so no configuration files, which mean every time you edit a config.h, you **need to recompile a program**.
 
 ### [DWM](https://dwm.suckless.org/) patches:
@@ -64,7 +64,7 @@ Stupidly simple screen lock utility. It can be set up using Xautolock, one of su
 
 <a id="deps"></a>
 
-## 📑 Details 📑
+## 📑 Details
 
 + **OS**: Arch
 + **Shell**: zsh + p10k
@@ -85,7 +85,7 @@ Stupidly simple screen lock utility. It can be set up using Xautolock, one of su
 
 <kbd>super</kbd> AKA Windows key is a modkey.
 
-#### ⌨️ Keyboard ⌨️
+#### ⌨️ Keyboard
 
 | Keybind | Function |
 | --- | --- |
