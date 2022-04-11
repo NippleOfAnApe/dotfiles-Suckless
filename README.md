@@ -1,4 +1,5 @@
 ## DWM Setup
+![combined](https://user-images.githubusercontent.com/89152669/162796445-0438a374-60e4-4a7c-ace6-7d0222909c49.png)
 
 <img src="https://i.imgur.com/QuYxysY.png">
 <img src="https://i.imgur.com/uFCs93Z.png">
