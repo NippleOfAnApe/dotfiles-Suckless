@@ -49,7 +49,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 #Set display
-xrandr --output eDP1 --mode 1920x1080 --rate 144.03 &
+#xrandr --output eDP1 --mode 1920x1080 --rate 144.03 &
+xrandr --setprovideroutputsource modesetting NVIDIA-0
+xrandr --auto
 
 #Gestures
 touchegg &
@@ -63,6 +65,9 @@ clipmenud &
 
 #Compositor
 picom &
+
+# Nvidia configs
+#nvidia-settings --load-config-only
 
 # Wallpaper
 nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds

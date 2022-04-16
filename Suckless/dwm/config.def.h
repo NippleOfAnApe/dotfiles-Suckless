@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 12;        /* gaps between windows */
-static const unsigned int snap      = 10;       /* snap pixel */
+static const unsigned int borderpx  = 3;       	/* border pixel of windows */
+static const unsigned int gappx     = 15;     	/* gaps between windows */
+static const unsigned int snap      = 3;       	/* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Medium:size=12" , "Font Awesome 6 Free Solid:size=12", "JoyPixels:size=12"};
-static const char dmenufont[]       = "MesloLGS NF:size=10";
+static const char *fonts[]          = { "Fira Code Medium:size=14" , "Font Awesome 6 Free Solid:size=14", "JoyPixels:size=14"};
+static const char dmenufont[]       = "MesloLGS NF:size=14";
 static const char col_gray1[]       = "#059DC0";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#E6F4F1";
@@ -30,15 +30,14 @@ static const Rule rules[] = {
 	/* class      instance    	title      	tags mask   isfloating   monitor */
 	{ "Chromium",     NULL,   	NULL,  		0,         	0,           -1 },
 	{ "st-256color",   NULL,   	NULL,  		1 << 1,    	0,           -1 },
-	{ "TelegramDesktop", NULL, 	NULL,	  	1 << 3,		0,			 -1	},
 	{ "VSCodium", NULL, 		NULL,	  	1 << 2,		0,			 -1	},
 };
 
 /* layout(s) */
-static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
+static const float mfact     	= 0.5; 	/* factor of master area size [0.05..0.95] */
+static const int nmaster     	= 1;    /* number of clients in master area */
+static const int resizehints 	= 1;    /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 1; 	/* 1 will force focus on the fullscreen window */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */

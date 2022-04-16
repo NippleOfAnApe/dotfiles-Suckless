@@ -92,7 +92,7 @@ export EDITOR='nano'
 export TERMINAL='st'
 
 export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
-export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/"
+export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/cpp/"
 export NNN_FIFO=/tmp/nnn.fifo
 
 export LS_COLORS="$(vivid generate dracula)"
