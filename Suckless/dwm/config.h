@@ -6,8 +6,8 @@ static const unsigned int gappx     = 15;     	/* gaps between windows */
 static const unsigned int snap      = 3;       	/* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Medium:size=14" , "Font Awesome 6 Free Solid:size=14", "JoyPixels:size=14"};
-static const char dmenufont[]       = "MesloLGS NF:size=14";
+static const char *fonts[]          = { "Fira Code Medium:size=12" , "Font Awesome 6 Free Solid:size=12", "JoyPixels:size=12"};
+static const char dmenufont[]       = "MesloLGS NF:size=12";
 static const char col_gray1[]       = "#059DC0";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#E6F4F1";
@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	/* class      instance    	title      	tags mask   isfloating   monitor */
 	{ "Chromium",     NULL,   	NULL,  		0,         	0,           -1 },
 	{ "st-256color",   NULL,   	NULL,  		1 << 1,    	0,           -1 },
-	{ "VSCodium", NULL, 		NULL,	  	1 << 2,		0,			 -1	},
+	{ "telegram-desktop", NULL, NULL,	  	1 << 4,		0,			 -1	},
 };
 
 /* layout(s) */
@@ -55,6 +55,7 @@ static const char *prtScFull[] = { "/usr/bin/flameshot", "full", "-c", "-p", "/W
 static const char *prtScGUI[] = { "/usr/bin/flameshot", "gui", NULL};
 static const char *dmenuemoji[]  = { "/home/george/.local/bin/dmenuunicode", NULL };
 static const char *clipmenu[] = { "/usr/bin/clipmenu", NULL};
+static const char *spawnSlock[] = { "/usr/local/bin/slock", NULL};
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -72,12 +73,12 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
-static const char *codiumcmd[]  = { "codium", NULL };
+static const char *codiumcmd[]  = { "vscodium", NULL };
 static const char *telegram[]  = { "telegram-desktop", NULL };
 static const char *pcmanfm[]  = { "pcmanfm", NULL };
 
 #include "movestack.c"
-#include <X11/XF86keysym.h>
+#include <X11/XF86keysym.h>	//https://github.com/freedesktop/xorg-x11proto/blob/master/XF86keysym.h
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -123,6 +124,7 @@ static Key keys[] = {
 	{ 0,         	XF86XK_AudioRaiseVolume,   spawn, 		   {.v = upvol   } },
 	{ 0,			XF86XK_MonBrightnessUp,	   spawn,		   {.v = light_up}},
 	{ 0,			XF86XK_MonBrightnessDown,  spawn,	  	   {.v = light_down}},
+	{ 0,			XF86XK_AudioStop,  		   spawn,	  	   {.v = spawnSlock}},
 	{ 0,							XK_Print,	   spawn,		   {.v = prtScFull}},
 	{ MODKEY,						XK_Print,	   spawn,		   {.v = prtScGUI}},
 	TAGKEYS(                        XK_1,                      0)

@@ -13,6 +13,21 @@ fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export BAT_THEME="Dracula"
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export EDITOR="nano"
+export VISUAL="vscodium"
+export TERMINAL='st-256color'
+
+export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
+export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/"
+export NNN_FIFO=/tmp/nnn.fifo
+
+export LS_COLORS="$(vivid generate dracula)"
+export PF_INFO="ascii title os kernel wm shell pkgs memory"
+export PF_COL1=4
+export PF_COL2=6
+export PF_COL3=2
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,21 +101,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export BAT_THEME="Dracula"
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export EDITOR='nano'
-export TERMINAL='st'
-
-export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
-export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/cpp/"
-export NNN_FIFO=/tmp/nnn.fifo
-
-export LS_COLORS="$(vivid generate dracula)"
-export PF_INFO="ascii title os kernel wm shell pkgs memory"
-export PF_COL1=4
-export PF_COL2=6
-export PF_COL3=2
-
 n ()
 {
     # Block nesting of nnn in subshells
@@ -144,11 +144,12 @@ n ()
 #
 # Aliases
 # alias zshconfig="mate ~/.zshrc"
+alias dots='bat /W/Stuff/u\&WN7#agTW21nU%/nagatoro\ dots.txt'
 alias w='nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds'
 alias s='startx'
-alias todo='bat /W/Stuff/todo.md'
+alias todo='bat /W/Stuff/u\&WN7#agTW21nU%/TODO.md'
+alias etodo='$VISUAL /W/Stuff/u\&WN7#agTW21nU%/TODO.md'
 alias q='/home/george/.local/quotes.sh'
-alias etodo='nano /W/Stuff/todo.md'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

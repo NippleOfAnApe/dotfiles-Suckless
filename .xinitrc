@@ -9,12 +9,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 if [ -f $sysresources ]; then
 
-
-
-
-
-
-
     xrdb -merge $sysresources
 
 fi
@@ -24,11 +18,6 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
 
 
     xrdb -merge "$userresources"
@@ -52,6 +41,7 @@ fi
 #xrandr --output eDP1 --mode 1920x1080 --rate 144.03 &
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
+xrandr --dpi 96
 
 #Gestures
 touchegg &
@@ -66,14 +56,11 @@ clipmenud &
 #Compositor
 picom &
 
-# Nvidia configs
-#nvidia-settings --load-config-only
-
 # Wallpaper
 nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds
 
 #Set keymaps
-setxkbmap -layout "us,ru" -option "grp:toggle" &
+setxkbmap -layout "us,ua" -option "grp:toggle" &
 
 # slstatus
 slstatus &
@@ -85,3 +72,6 @@ done
 
 #DWM
 exec dwm
+
+#Awesome
+#exec awesome
