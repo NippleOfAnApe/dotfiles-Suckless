@@ -1,18 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;       	/* border pixel of windows */
-static const unsigned int gappx     = 15;     	/* gaps between windows */
+static const unsigned int borderpx  = 4;       	/* border pixel of windows */
+static const unsigned int gappx     = 10;     	/* gaps between windows */
 static const unsigned int snap      = 3;       	/* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Fira Code Medium:size=12" , "Font Awesome 6 Free Solid:size=12", "JoyPixels:size=12"};
+static const char *fonts[]          = { "Fira Code Medium:size=13" , "Font Awesome 6 Free Solid:size=12", "JoyPixels:size=12"};
 static const char dmenufont[]       = "MesloLGS NF:size=12";
-static const char col_gray1[]       = "#059DC0";
+static const char col_gray1[]       = "#001d3d";
 static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#E6F4F1";
-static const char col_gray4[]       = "#324B4B";
-static const char col_cyan[]        = "#6AF2F0";
+static const char col_gray3[]       = "#ffc300";
+static const char col_gray4[]       = "#ffd60a";
+static const char col_cyan[]        = "#003566";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -46,11 +46,11 @@ static const Layout layouts[] = {
 	{ "[]",      monocle },
 };
 
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *upvol[]   = { "/home/george/.local/bin/volumePlus",     NULL };
+static const char *downvol[] = { "/home/george/.local/bin/volumeMinus",     NULL };
 static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-static const char *light_up[] = {"/usr/bin/light", "-A", "5", NULL};
-static const char *light_down[] = {"/usr/bin/light", "-U", "5", NULL};
+static const char *light_up[] = {"/home/george/.local/bin/brightnessUp", NULL};
+static const char *light_down[] = {"/home/george/.local/bin/brightnessDown", NULL};
 static const char *prtScFull[] = { "/usr/bin/flameshot", "full", "-c", "-p", "/W/Media", NULL};
 static const char *prtScGUI[] = { "/usr/bin/flameshot", "gui", NULL};
 static const char *dmenuemoji[]  = { "/home/george/.local/bin/dmenuunicode", NULL };
@@ -72,6 +72,7 @@ static const char *spawnSlock[] = { "/usr/local/bin/slock", NULL};
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *nmtuicmd[]  = { "st", "-e", "nmtui", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
 static const char *codiumcmd[]  = { "vscodium", NULL };
 static const char *telegram[]  = { "telegram-desktop", NULL };
@@ -146,7 +147,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = nmtuicmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },

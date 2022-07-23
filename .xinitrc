@@ -59,11 +59,15 @@ picom &
 # Wallpaper
 nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds
 
+#Notifications
+dunst &
+
 #Set keymaps
 setxkbmap -layout "us,ua" -option "grp:toggle" &
 
 # slstatus
 slstatus &
+#polybar
 
 #Loop
 while true ; do
@@ -75,3 +79,6 @@ exec dwm
 
 #Awesome
 #exec awesome
+
+#LeftWM
+#exec leftwm

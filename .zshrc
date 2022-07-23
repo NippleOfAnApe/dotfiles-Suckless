@@ -9,18 +9,18 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export BAT_THEME="Dracula"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export EDITOR="nano"
+export EDITOR="nvim"
 export VISUAL="vscodium"
 export TERMINAL='st-256color'
 
 export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
-export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/"
+export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/;s:/W/Stuff/u&WN7#agTW21nU%"
 export NNN_FIFO=/tmp/nnn.fifo
 
 export LS_COLORS="$(vivid generate dracula)"
