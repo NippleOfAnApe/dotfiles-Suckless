@@ -1,6 +1,6 @@
 ## DWM Setup
-![combined](https://user-images.githubusercontent.com/89152669/162796445-0438a374-60e4-4a7c-ace6-7d0222909c49.png)
 ![2022-08-15_23-39](https://user-images.githubusercontent.com/89152669/184715336-4cd6f004-2d71-4f51-bb37-83f5aab5170f.png)
+![combined](https://user-images.githubusercontent.com/89152669/162796445-0438a374-60e4-4a7c-ace6-7d0222909c49.png)
 
 
 *NOTE: wallpapers use sepparate directory, and they can be changed randomly*
