@@ -29,8 +29,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    	title      	tags mask   isfloating   monitor */
 	{ "Chromium",     NULL,   	NULL,  		0,         	0,           -1 },
-	{ "st-256color",   NULL,   	NULL,  		1 << 1,    	0,           -1 },
-	{ "telegram-desktop", NULL, NULL,	  	1 << 4,		0,			 -1	},
+	{ "st-256color",   NULL,   	NULL,  		1 << 1,    	0,           -1 }
 };
 
 /* layout(s) */
@@ -42,8 +41,8 @@ static const int lockfullscreen = 1; 	/* 1 will force focus on the fullscreen wi
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]",      tile },    /* first entry is default */
-	{ "[]",      NULL },    /* no layout function means floating behavior */
-	{ "[]",      monocle },
+	{ "[]",      NULL },
+	{ "[]",      monocle},    /* no layout function means floating behavior */
 };
 
 static const char *upvol[]   = { "/home/george/.local/bin/volumePlus",     NULL };
@@ -74,6 +73,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *nmtuicmd[]  = { "st", "-e", "nmtui", NULL };
 static const char *browsercmd[]  = { "chromium", NULL };
+static const char *librecmd[]  = { "librewolf", NULL };
 static const char *codiumcmd[]  = { "vscodium", NULL };
 static const char *telegram[]  = { "telegram-desktop", NULL };
 static const char *pcmanfm[]  = { "pcmanfm", NULL };
@@ -86,9 +86,10 @@ static Key keys[] = {
 	{ MODKEY,                       XK_r,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             			XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,             			XK_F2, 	   spawn,          {.v = browsercmd } },
-	{ MODKEY,             			XK_F1, 	   spawn,          {.v = pcmanfm } },
+	{ MODKEY,             			XK_F1, 	   spawn,          {.v = librecmd } },
 	{ MODKEY,             			XK_F3, 	   spawn,          {.v = codiumcmd } },
 	{ MODKEY,             			XK_F4, 	   spawn,          {.v = telegram } },
+	{ MODKEY,             			XK_F5, 	   spawn,          {.v = pcmanfm } },
 	{ MODKEY|ShiftMask,             XK_e, 	   spawn,          {.v = dmenuemoji } },
 	{ MODKEY|ShiftMask,             XK_c, 	   spawn,          {.v = clipmenu } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

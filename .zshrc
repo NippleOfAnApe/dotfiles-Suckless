@@ -15,9 +15,12 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
 export BAT_THEME="Dracula"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export EDITOR="nvim"
+export CC=clang
+export CXX=clang++
+export EDITOR="nano"
 export VISUAL="vscodium"
 export TERMINAL='st-256color'
+export TOKEN='5493289687:AAHrphLimTV1aQv_Amp-Ksq2slKTQ6ZOhE4'
 
 export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
 export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/;s:/W/Stuff/u&WN7#agTW21nU%"
@@ -147,10 +150,12 @@ n ()
 alias dots='bat /W/Stuff/u\&WN7#agTW21nU%/nagatoro\ dots.txt'
 alias w='nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds'
 alias s='startx'
-alias todo='bat /W/Stuff/u\&WN7#agTW21nU%/TODO.md'
-alias etodo='$VISUAL /W/Stuff/u\&WN7#agTW21nU%/TODO.md'
+alias todo='bat /W/Stuff/u\&WN7#agTW21nU%/MyNotebook/TODO.md'
+alias etodo='nvim /W/Stuff/u\&WN7#agTW21nU%/MyNotebook/TODO.md'
+alias cod='vscodium'
 alias q='/home/george/.local/quotes.sh'
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias cr='cargo run'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
