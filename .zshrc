@@ -20,7 +20,6 @@ export CXX=clang++
 export EDITOR="nano"
 export VISUAL="vscodium"
 export TERMINAL='st-256color'
-export TOKEN='5493289687:AAHrphLimTV1aQv_Amp-Ksq2slKTQ6ZOhE4'
 
 export NNN_PLUG='f:finder;i:imgview;e:-!sudo -E nano $nnn;v:preview-tui;d:dragdrop'
 export NNN_BMS="h:$HOME/;w:/W/;d:/W/DownloadZ/;c:/W/codes/;s:/W/Stuff/u&WN7#agTW21nU%"
