@@ -8,9 +8,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
     xrdb -merge $sysresources
-
 fi
 
 if [ -f $sysmodmap ]; then
@@ -18,10 +16,7 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -37,48 +32,25 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-#Set display
-#xrandr --output eDP1 --mode 1920x1080 --rate 144.03 &
+dunst &
+picom &
+touchegg &
+clipmenud &
+setxkbmap -layout "us,ua" -option "grp:toggle" &
+
 xrandr --setprovideroutputsource modesetting NVIDIA-0
 xrandr --auto
 xrandr --dpi 96
 
-#Gestures
-touchegg &
+nitrogen --set-zoom-fill --random /W/shared/backgrounds &
 
-# clipmeu knows which X server to use
-systemctl --user import-environment DISPLAY &
-clipmenud &
+redshift &
 
-#Polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+#Statusbar Loop
+bat=$(tail /sys/class/power_supply/BAT1/capacity)
+while xsetroot -name " $bat% | $(date +"%A | %d %b | %H:%M")"
+do
+    sleep 1m
+done &
 
-#Compositor
-picom &
-
-# Wallpaper
-nitrogen --set-zoom-fill --random $HOME/Suckless/backgrounds
-
-#Notifications
-dunst &
-
-#Set keymaps
-setxkbmap -layout "us,ua" -option "grp:toggle" &
-
-# slstatus
-slstatus &
-#polybar
-
-#Loop
-while true ; do
-	dwm>/dev/null 2>&1
-done
-
-#DWM
 exec dwm
-
-#Awesome
-#exec awesome
-
-#LeftWM
-#exec leftwm

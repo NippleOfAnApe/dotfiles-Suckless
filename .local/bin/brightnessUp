@@ -1,15 +1,14 @@
-#!/bin/bash
+#!/bin/zsh
 # mybrightness
 
 # Arbitrary but unique message tag
 msgTag="mybrightness"
 
 light -A 5 > /dev/null
+cp /sys/class/backlight/intel_backlight/brightness /etc/light/brightness
 
 # Query amixer for the current volume and whether or not the speaker is muted
 #volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
 value="$(light -G | cut -f1 -d'.')"
-dunstify -a "mybrightness" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag -h int:value:"$value" " Brightness: ${value}%"
+dunstify -a "mybrightness" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$value" " ${value}%"
 
-# Play the volume changed sound
-canberra-gtk-play -i bell -d "mybrightness"

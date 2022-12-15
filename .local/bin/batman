@@ -1,0 +1,3 @@
+#!/bin/zsh
+# fix for man pages through bat on zsh
+col -bx < "$1" | bat --language man -p

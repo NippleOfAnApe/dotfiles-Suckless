@@ -5,14 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Fira Code Retina:pixelsize=14:antialias=true:autohint=true";
-/* Spare fonts */
-static char *font2[] = {
-	"MesloLGS NF:pixelsize=14:antialias=true:autohint=true",
-	"JoyPixels:pixelsize=12:antialias=true:autohint=true"
-/*	"Inconsolata for Powerline:pixelsize=12:antialias=true:autohint=true", */
-/*	"Hack Nerd Font Mono:pixelsize=11:antialias=true:autohint=true", */
-};
+static char *font = "Fira Mono Medium:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -23,7 +16,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/zsh";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -75,18 +68,6 @@ static unsigned int blinktimeout = 800;
 static unsigned int cursorthickness = 2;
 
 /*
- * 1: render most of the lines/blocks characters without using the font for
- *    perfect alignment between cells (U2500 - U259F except dashes/diagonals).
- *    Bold affects lines thickness if boxdraw_bold is not 0. Italic is ignored.
- * 0: disable (render all U25XX glyphs normally from the font).
- */
-const int boxdraw = 0;
-const int boxdraw_bold = 0;
-
-/* braille (U28XX):  1: render as adjacent "pixels",  0: use font */
-const int boxdraw_braille = 0;
-
-/*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
  * it
  */
@@ -110,103 +91,49 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	// Seashells
 	/* 8 normal colors */
-//   [0] = "#17384c", /* black   */
-//   [1] = "#d05023", /* red     */
-//   [2] = "#027b9b", /* green   */
-//   [3] = "#fba02f", /* yellow  */
-//   [4] = "#1d4850", /* blue    */
-//   [5] = "#68d3f0", /* magenta */
-//   [6] = "#50a3b5", /* cyan    */
-//   [7] = "#deb88d", /* white   */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-//   /* 8 bright colors */
-//   [8]  = "#424b52", /* black   */
-//   [9]  = "#d38677", /* red     */
-//   [10] = "#618c98", /* green   */
-//   [11] = "#fdd29e", /* yellow  */
-//   [12] = "#1abcdd", /* blue    */
-//   [13] = "#bbe3ee", /* magenta */
-//   [14] = "#86abb3", /* cyan    */
-//   [15] = "#fee3cd", /* white   */
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
-//   /* special colors */
-//   [256] = "#08131a", /* background */
-//   [257] = "#deb88d", /* foreground */
+	[255] = 0,
 
-	// Jellybeans
-  	/* 8 normal colors */
-//   [0] = "#919191", /* black   */
-//   [1] = "#e17373", /* red     */
-//   [2] = "#94b978", /* green   */
-//   [3] = "#ffb97b", /* yellow  */
-//   [4] = "#96bddb", /* blue    */
-//   [5] = "#e1c0fa", /* magenta */
-//   [6] = "#00988e", /* cyan    */
-//   [7] = "#dedede", /* white   */
-
-//   /* 8 bright colors */
-//   [8]  = "#bdbdbd", /* black   */
-//   [9]  = "#ffa0a0", /* red     */
-//   [10] = "#bddeab", /* green   */
-//   [11] = "#ffdba0", /* yellow  */
-//   [12] = "#b1d7f6", /* blue    */
-//   [13] = "#fbdaff", /* magenta */
-//   [14] = "#19b2a7", /* cyan    */
-//   [15] = "#ffffff", /* white   */
-
-//   /* special colors */
-//   [256] = "#111111", /* background */
-//   [257] = "#dedede", /* foreground */
-
-  //Dracula
-    	/* 8 normal colors */
-  [0] = "#000000", /* black   */
-  [1] = "#ff5555", /* red     */
-  [2] = "#50fa7b", /* green   */
-  [3] = "#f0fa8b", /* yellow  */
-  [4] = "#bd92f8", /* blue    */
-  [5] = "#ff78c5", /* magenta */
-  [6] = "#8ae9fc", /* cyan    */
-  [7] = "#bbbbbb", /* white   */
-
-  /* 8 bright colors */
-  [8]  = "#545454", /* black   */
-  [9]  = "#ff5454", /* red     */
-  [10] = "#50fa7b", /* green   */
-  [11] = "#f0fa8b", /* yellow  */
-  [12] = "#bd92f8", /* blue    */
-  [13] = "#ff78c5", /* magenta */
-  [14] = "#8ae9fc", /* cyan    */
-  [15] = "#ffffff", /* white   */
-
-  /* special colors */
-  [256] = "#1e1f28", /* background */
-  [257] = "#f8f8f2", /* foreground */
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
 
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 3;
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
-/*
- Colors used, when the specific fg == defaultfg. So in reverse mode this
- * will reverse too. Another logic would only make the simple feature too
- * complex.
- */
-unsigned int defaultitalic = 7;
-unsigned int defaultunderline = 7;
 /*
  * Default shape of cursor
  * 2: Block ("█")
@@ -214,7 +141,7 @@ unsigned int defaultunderline = 7;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers
@@ -227,7 +154,7 @@ static unsigned int rows = 24;
  * Default colour and shape of the mouse cursor
  */
 static unsigned int mouseshape = XC_xterm;
-static unsigned int mousefg = 5;
+static unsigned int mousefg = 7;
 static unsigned int mousebg = 0;
 
 /*
@@ -251,7 +178,7 @@ static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
 	{ XK_ANY_MOD,           Button4, kscrollup,      {.i = 1},		0, /* !alt */ -1 },
 	{ XK_ANY_MOD,           Button5, kscrolldown,    {.i = 1},		0, /* !alt */ -1 },
-	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
+	{ XK_ANY_MOD,           Button2, clippaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
 	{ ShiftMask,            Button5, ttysend,        {.s = "\033[6;2~"} },
@@ -268,8 +195,8 @@ static Shortcut shortcuts[] = {
 	{ ControlMask,          XK_Print,       toggleprinter,  {.i =  0} },
 	{ ShiftMask,            XK_Print,       printscreen,    {.i =  0} },
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
-	{ MODKEY,              	XK_equal,       zoom,           {.f = +1} },
-	{ MODKEY,             	XK_minus,       zoom,           {.f = -1} },
+	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
+	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },

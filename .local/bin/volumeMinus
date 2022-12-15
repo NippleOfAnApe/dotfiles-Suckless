@@ -1,25 +1,21 @@
-#!/bin/bash
-# changeVolume
+#!/bin/zsh
 
 # Arbitrary but unique message tag
 msgTag="myvolume"
 
 # Change the volume using alsa(might differ if you use pulseaudio)
-#amixer -c 0 set Master "$@" > /dev/null
-pactl set-sink-volume 0 -5% > /dev/null
+amixer sset Master 5%- > /dev/null
 
 # Query amixer for the current volume and whether or not the speaker is muted
-#volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
-volume="$(pamixer --get-volume-human | sed 's/%//g')"
+volume="$(amixer -c 0 get Master | tail -1 | awk '{print $4}' | sed 's/[^0-9]*//g')"
+
+#volume="$(pamixer --get-volume-human | sed 's/%//g')"
 mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+
 if [[ $volume == 0 || "$mute" == "off" ]]; then
     # Show the sound muted notification
-    dunstify -a "changeVolume" -u low -i "" -h string:x-dunst-stack-tag:$msgTag " Volume muted" 
+    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag "ﱝ Volume muted" 
 else
     # Show the volume notification
-    dunstify -a "changeVolume" -u low -i audio-volume-high -h string:x-dunst-stack-tag:$msgTag \
-    -h int:value:"$volume" " Volume: ${volume}%"
+    dunstify -a "changeVolume" -u low -h string:x-dunst-stack-tag:$msgTag -h int:value:"$volume" "${volume}% ﱜ"
 fi
-
-# Play the volume changed sound
-canberra-gtk-play -i audio-volume-change -d "changeVolume"

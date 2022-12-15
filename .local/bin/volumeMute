@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+# Arbitrary but unique message tag
+msgTag="myvolume"
+
+# Change the volume using alsa(might differ if you use pulseaudio)
+amixer sset Master toggle > /dev/null
+
+#volume="$(pamixer --get-volume-human | sed 's/%//g')"
+mute="$(amixer -c 0 get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+
+if [[ "$mute" == "off" ]]; then
+    dunstify -a "changeVolume" -u low -h string:bgcolor:#4444ff -h string:x-dunst-stack-tag:$msgTag "ﱝ Volume muted" 
+else
+    dunstify -a "changeVolume" -u low -h string:bgcolor:#44ff44 -h string:x-dunst-stack-tag:$msgTag "ﱝ Volume unmuted" 
+fi

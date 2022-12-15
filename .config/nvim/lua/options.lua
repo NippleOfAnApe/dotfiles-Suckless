@@ -1,0 +1,36 @@
+-- :help options
+vim.opt.browsedir = "current"
+vim.opt.clipboard = "unnamedplus"
+--vim.opt.expandtab = true
+vim.opt.fileencoding = "utf-8"
+vim.opt.ignorecase = true
+--vim.opt.mouse = "a"   -- Suports anyway
+vim.opt.number = true
+vim.opt.ruler = false
+vim.opt.scrolloff = 6
+vim.opt.shellslash = true
+--vim.opt.shiftwidth = 4
+vim.opt.smartcase = true
+--vim.opt.spell = true
+--vim.opt.spelloptions = "camel"
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.swapfile = false
+--vim.opt.tabstop = 4
+vim.opt.title = true
+vim.opt.undofile = true
+--vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
+--vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
+--vim.opt.conceallevel = 0                        -- so that `` is visible in markdown files
+--vim.opt.pumheight = 10                          -- pop up menu height
+--vim.opt.showmode = false                        -- we don't need to see things like -- INSERT -- anymore
+--vim.opt.smartindent = true                      -- make indenting smarter again
+--vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
+--vim.opt.timeoutlen = 1000                       -- time to wait for a mapped sequence to complete (in milliseconds)
+--vim.opt.updatetime = 300                        -- faster completion (4000ms default)
+--vim.opt.relativenumber = false                  -- set relative numbered lines
+--vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+--vim.opt.wrap = false                            -- display lines as one long line
+--vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+
+--vim.cmd "set whichwrap+=<,>,[,],h,l"
